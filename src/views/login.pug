@@ -1,0 +1,40 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    title Bootstrap 4 Starter With Nav
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+  body
+    .container.pl-sm-0.pr-sm-0.pl-lg-3.pr-lg-3
+        if messages.errors
+            .alert.alert-danger.fade.show
+                button.close(type='button', data-dismiss='alert')
+                    i.fa.fa-times-circle-o
+                for error in messages.errors
+                    div= error.msg
+        if messages.info
+            .alert.alert-info.fade.show
+                button.close(type='button', data-dismiss='alert')
+                    i.fa.fa-times-circle-o
+                for info in messages.info
+                    div= info.msg
+        if messages.success
+            .alert.alert-success.fade.show
+                button.close(type='button', data-dismiss='alert')
+                    i.fa.fa-times-circle-o
+                for success in messages.success
+                    div= success.msg
+        form.mt-4(action='/postLogin' method='post')
+            .form-group
+                label(for='exampleInputEmail1') Email address
+                input#exampleInputEmail1.form-control(type='text' aria-describedby='emailHelp' placeholder='Enter email' name='email')
+                small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+            .form-group
+                label(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control(type='password' placeholder='Password' name='password')
+            button.btn.btn-primary(type='submit') Submit
+
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")
